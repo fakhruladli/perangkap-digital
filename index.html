@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersafe: Perangkap Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #050505;
+            background-image: 
+                linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .cyber-card {
+            background: rgba(20, 20, 25, 0.8);
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff41, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .cyber-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff41;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+        }
+
+        .cyber-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .cyber-card:hover .icon-container {
+            color: #00ff41;
+            transform: scale(1.1);
+        }
+
+        .icon-container {
+            transition: all 0.3s ease;
+        }
+
+        .glitch-text {
+            position: relative;
+        }
+        
+        /* Scanline effect */
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 255, 65, 0.02) 51%);
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col text-gray-200">
+
+    <div class="scanline"></div>
+
+    <!-- Header -->
+    <header class="pt-12 pb-8 px-4 text-center relative z-10">
+        <div class="inline-block mb-4 p-3 rounded-full border border-green-500/30 bg-green-500/10 shadow-[0_0_15px_rgba(0,255,65,0.2)]">
+            <i class="fas fa-shield-alt text-4xl text-[#00ff41]"></i>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-2 tracking-wider uppercase text-shadow">
+            Cybersafe
+        </h1>
+        <h2 class="text-xl md:text-2xl text-[#00ff41] font-light tracking-widest">
+            Perangkap Digital
+        </h2>
+        <div class="w-24 h-1 bg-[#00ff41] mx-auto mt-6 rounded-full shadow-[0_0_10px_#00ff41]"></div>
+    </header>
+
+    <!-- Main Menu Grid -->
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Link 1: Profil Bayangan -->
+            <a href="https://profilbayangan.netlify.app/" target="_blank" class="cyber-card group rounded-xl p-6 flex items-center space-x-6 cursor-pointer hover:bg-white/5">
+                <div class="icon-container w-16 h-16 rounded-lg bg-gray-800 flex items-center justify-center border border-gray-700 group-hover:border-[#00ff41]">
+                    <i class="fas fa-user-secret text-3xl text-gray-400"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-[#00ff41] transition-colors">Profil Bayangan</h3>
+                    <p class="text-sm text-gray-400 mt-1">Lindungi identiti digital anda dari penceroboh.</p>
+                </div>
+                <div class="ml-auto">
+                    <i class="fas fa-chevron-right text-gray-600 group-hover:text-[#00ff41] transition-colors"></i>
+                </div>
+            </a>
+
+            <!-- Link 2: Sembang Scam -->
+            <a href="https://sembangscam.netlify.app/" target="_blank" class="cyber-card group rounded-xl p-6 flex items-center space-x-6 cursor-pointer hover:bg-white/5">
+                <div class="icon-container w-16 h-16 rounded-lg bg-gray-800 flex items-center justify-center border border-gray-700 group-hover:border-[#00ff41]">
+                    <i class="fas fa-comments text-3xl text-gray-400"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-[#00ff41] transition-colors">Sembang Scam</h3>
+                    <p class="text-sm text-gray-400 mt-1">Kenali taktik penipuan dalam talian.</p>
+                </div>
+                <div class="ml-auto">
+                    <i class="fas fa-chevron-right text-gray-600 group-hover:text-[#00ff41] transition-colors"></i>
+                </div>
+            </a>
+
+            <!-- Link 3: Chatwise Game -->
+            <a href="https://chatwisegame.netlify.app/" target="_blank" class="cyber-card group rounded-xl p-6 flex items-center space-x-6 cursor-pointer hover:bg-white/5">
+                <div class="icon-container w-16 h-16 rounded-lg bg-gray-800 flex items-center justify-center border border-gray-700 group-hover:border-[#00ff41]">
+                    <i class="fas fa-robot text-3xl text-gray-400"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-[#00ff41] transition-colors">Chatwise Game</h3>
+                    <p class="text-sm text-gray-400 mt-1">Bijak berinteraksi di media sosial.</p>
+                </div>
+                <div class="ml-auto">
+                    <i class="fas fa-chevron-right text-gray-600 group-hover:text-[#00ff41] transition-colors"></i>
+                </div>
+            </a>
+
+            <!-- Link 4: Cyber Survivor -->
+            <a href="https://cybersurvivor.netlify.app/" target="_blank" class="cyber-card group rounded-xl p-6 flex items-center space-x-6 cursor-pointer hover:bg-white/5">
+                <div class="icon-container w-16 h-16 rounded-lg bg-gray-800 flex items-center justify-center border border-gray-700 group-hover:border-[#00ff41]">
+                    <i class="fas fa-biohazard text-3xl text-gray-400"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-[#00ff41] transition-colors">Cyber Survivor</h3>
+                    <p class="text-sm text-gray-400 mt-1">Bertahan dari serangan siber yang mencabar.</p>
+                </div>
+                <div class="ml-auto">
+                    <i class="fas fa-chevron-right text-gray-600 group-hover:text-[#00ff41] transition-colors"></i>
+                </div>
+            </a>
+
+            <!-- Link 5: The QR Trap -->
+            <a href="https://theqrtrap.netlify.app/" target="_blank" class="cyber-card group md:col-span-2 rounded-xl p-6 flex items-center space-x-6 cursor-pointer hover:bg-white/5">
+                <div class="icon-container w-16 h-16 rounded-lg bg-gray-800 flex items-center justify-center border border-gray-700 group-hover:border-[#00ff41]">
+                    <i class="fas fa-qrcode text-3xl text-gray-400"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-[#00ff41] transition-colors">The QR Trap</h3>
+                    <p class="text-sm text-gray-400 mt-1">Jangan imbas sembarangan! Kenali kod QR yang bahaya.</p>
+                </div>
+                <div class="ml-auto">
+                    <i class="fas fa-chevron-right text-gray-600 group-hover:text-[#00ff41] transition-colors"></i>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-8 text-center border-t border-gray-800 relative z-10 bg-[#050505]">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-500 text-sm mb-2 font-light tracking-wide">Dibangunkan oleh:</p>
+            <p class="text-white font-medium text-lg">Fakulti Sains Komputer & Matematik</p>
+            <p class="text-[#00ff41] font-bold mt-1">Universiti Malaysia Terengganu</p>
+            
+            <div class="mt-6 flex justify-center space-x-4 opacity-50">
+                <i class="fas fa-microchip text-gray-600"></i>
+                <i class="fas fa-network-wired text-gray-600"></i>
+                <i class="fas fa-lock text-gray-600"></i>
+            </div>
+            
+            <p class="text-xs text-gray-700 mt-6">&copy; <script>document.write(new Date().getFullYear())</script> Hak Cipta Terpelihara</p>
+        </div>
+    </footer>
+
+</body>
+</html>
